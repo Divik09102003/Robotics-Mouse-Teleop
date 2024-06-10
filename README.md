@@ -1,7 +1,7 @@
 
 # Mouse Teleop for Turtlesim
 
-This project enables controlling the Turtlesim turtle using a mouse instead of the keyboard. The project involves installing necessary drivers, determining the topics and message types, and writing a ROS node to move the Turtlesim turtle.
+This project enables controlling the Kuboki robot using a mouse instead of the keyboard. The project involves installing necessary drivers, determining the topics and message types, and writing a ROS node to move the Turtlesim turtle.
 
 ## Table of Contents
 
@@ -28,6 +28,10 @@ Follow these steps to install and set up the mouse teleop package:
     ```bash
     catkin_make
     ```
+4. Once the workspace is compiled, run the following command to the terminal:
+    ```bash
+    source devel/setup.bash
+    ```
 
 ## Usage
 
@@ -37,7 +41,7 @@ To run the mouse teleop node, use the following command:
 roslaunch mouse_teleop mouse_teleop.launch
 ```
 
-A GUI should appear. Place your mouse cursor within the GUI screen, hold the left mouse button, and drag the cursor to control the turtle.
+A GUI should appear. Place your mouse cursor within the GUI screen, hold the left mouse button, and drag the cursor to control the Kobuki robot.
 
 ## Topics and Message Types
 
@@ -52,39 +56,13 @@ Determine the topic name and message type that the mouse teleop node publishes t
     ```bash
     rostopic info <topic_name>
     ```
-
-## Moving Turtlesim with the Mouse
-
-Write and build a ROS node that intercepts the topic published by the mouse teleop node and republish it as `turtle1/cmd_vel`:
-
-1. Create a new ROS package (if not already created).
-2. Write a node (e.g., `mouse_teleop_interceptor.cpp`) to intercept and republish the topic.
-3. Build the package using `catkin_make`.
-4. Run the node to control the Turtlesim turtle using the mouse.
-
-Example code for `mouse_teleop_interceptor.cpp`:
-
-```cpp
-#include <ros/ros.h>
-#include <geometry_msgs/Twist.h>
-
-ros::Publisher turtle_pub;
-
-void mouseCallback(const geometry_msgs::Twist::ConstPtr& msg) {
-    turtle_pub.publish(msg);
-}
-
-int main(int argc, char** argv) {
-    ros::init(argc, argv, "mouse_teleop_interceptor");
-    ros::NodeHandle nh;
-
-    ros::Subscriber mouse_sub = nh.subscribe("mouse_topic", 10, mouseCallback);
-    turtle_pub = nh.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 10);
-
-    ros::spin();
-    return 0;
-}
-```
+## Connecting the kobuki robot to mouse teleop node
+1. In another terminal, open the mouse_teleop_runner workspace.
+2. Run the following command:
+    ```bash
+    source devel/setup.bash
+    ```
+3. rosrun mouse_teleop_interceptor mouse
 
 ## License
 
