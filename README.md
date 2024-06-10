@@ -1,17 +1,23 @@
-
 # Mouse Teleop for Kobuki Robot
 
-This project enables controlling the Kobuki robot using a mouse instead of the traditional keyboard inputs. It includes steps for installing necessary drivers, determining the ROS topics and message types, and setting up a ROS node to control the robot's movement.
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [Introduction](#introduction)
+- [Operating System](#operating-system)
 - [Topics and Message Types](#topics-and-message-types)
-- [Moving the Kobuki Robot with a Mouse](#moving-the-kobuki-robot-with-a-mouse)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Possible Improvements](#possible-improvements)
 - [License](#license)
 - [Contributing](#contributing)
 - [Acknowledgments](#acknowledgments)
+
+## Introduction
+This project enables the control of the Kobuki robot using a mouse, providing a more intuitive and accessible method compared to traditional keyboard inputs. The system is designed to run on ROS (Robot Operating System), leveraging existing tools and libraries for efficient robot management. This approach not only simplifies the user interaction but also enhances the flexibility of robot control in various environments. Ideal for educational purposes, the project offers hands-on experience with real-time robot control systems, suitable for both beginners and advanced users with a basic setup of ROS and compatible hardware.
+
+## Operating System
+This project tested on Ubuntu v16.04(kinetic). 
     
 ## Topics and Message Types
 
@@ -21,11 +27,16 @@ To determine the topic name and message type for the mouse teleop node, follow t
     ```bash
     rostopic list
     ```
-2. To Identify the publication and subscription of a node:
+    Example:
+   
+    ![CHEESE!](Topic_name.jpg)
+3. To Identify the publication and subscription of a node:
    ```bash
    rosnode infor <node_name>
    ```
-
+   Example:
+   
+    ![CHEESE!](Node_name.jpg)
     
 ## Usage
 
