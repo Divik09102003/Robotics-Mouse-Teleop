@@ -1,0 +1,2 @@
+joy_teleop:key_teleop:mouse_teleop:teleop_tools:teleop_tools_msgs
+-DCATKIN_DEVEL_PREFIX=/home/divik/Desktop/Robo/teleop_tools/devel -DCMAKE_INSTALL_PREFIX=/home/divik/Desktop/Robo/teleop_tools/install -G Unix Makefiles

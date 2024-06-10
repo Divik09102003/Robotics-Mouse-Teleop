@@ -1,0 +1,2 @@
+mouse_teleop_interceptor
+-DCATKIN_DEVEL_PREFIX=/home/divik/Desktop/Robo/mouse_teleop_runner/devel -DCMAKE_INSTALL_PREFIX=/home/divik/Desktop/Robo/mouse_teleop_runner/install -G Unix Makefiles

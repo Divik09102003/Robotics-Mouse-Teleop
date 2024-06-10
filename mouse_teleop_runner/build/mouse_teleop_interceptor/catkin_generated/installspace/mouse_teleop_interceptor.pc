@@ -1,0 +1,8 @@
+prefix=/home/divik/Desktop/Robo/mouse_teleop_runner/install
+
+Name: mouse_teleop_interceptor
+Description: Description of mouse_teleop_interceptor
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
